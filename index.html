@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Case AutoU</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <header>
+
+        <div class="caixa">
+
+            <h1>Case Prático: Home</h1>
+            <ul class="sair">
+                <button id="botaoSair" class="esconder">Sair</button>
+            </ul>
+        </div>
+    </header>
+
+    <body>
+        <main>
+            <form id="formulario">
+                <label for="email-matricula">Informe o E-mail ou Matrícula para acessar:</label>
+                <input type="text" id="email-matricula" class="input-padrao" required placeholder="XXXX / cliente@email.com" name="acesso">
+                <input type="submit" id="enviar" value="Enviar" class="enviar">
+            </form>
+
+            <section id="lista-colaboradores" class="esconder">
+                <div class="colaboradores">
+                    <div class="colaboradores-categoria">
+                        <p class="categoria-nome">Colaboradores <br>Clique em um colaborador para reagir:</p>
+                    </div>
+                    <div class="colaborador">
+                        <button id="colaborador-membro" class="utilizavel"> </button>
+                        <button id="colaborador-membro" class="utilizavel"> </button>
+                        <button id="colaborador-membro" class="utilizavel"> </button>
+                        <button id="colaborador-membro" class="utilizavel"> </button>
+                        <button id="colaborador-membro" class="utilizavel"> </button>
+                    </div>
+                </div>
+
+                <div id="reacoes" class="esconder">
+                    <div class="reacoes-categoria">
+                        <p class="categoria-nome">Reações disponíveis:</p>
+                    </div>
+                    <div class="reacao">
+                        <button id="reacao-nome">LIKE</button>
+                        <button id="reacao-nome">ORGULHO</button>
+                        <button id="reacao-nome">EXCELENTE TRABALHO</button>
+                        <button id="reacao-nome">COLABORAÇÃO</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+
+            <p class="copyright">&copy; Copyright Fictício - 20XX</p>
+        </footer>
+        <script src="main.js"defer></script>
+    </body>
+</html>
+
+
