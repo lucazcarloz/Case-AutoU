@@ -1,23 +1,27 @@
 class Colaborador{
 
-    constructor(nome, sobrenome, matricula, email, departamento, cargo){
+    constructor(nome, sobrenome, matricula, email, departamento, cargo, like, orgulho, excelenteTrabalho, colaboracao){
 
-        this.nome           = nome;
-        this.sobrenome      = sobrenome;
-        this.matricula      = matricula;
-        this.email          = email;
-        this.departamento   = departamento;
-        this.cargo          = cargo;
-    }
-    
+        this.nome               = nome;
+        this.sobrenome          = sobrenome;
+        this.matricula          = matricula;
+        this.email              = email;
+        this.departamento       = departamento;
+        this.cargo              = cargo;
+        this.like               = like;
+        this.orgulho            = orgulho;
+        this.excelenteTrabalho  = excelenteTrabalho;
+        this.colaboracao        = colaboracao;
+    }    
 }
 
+
 const colaboradores = [
-new Colaborador("Lucas",    "Fernandes",   "3748", "lucas.fernandes@cliente.com",  "Financeiro",   "Analista"),
-new Colaborador("Pedro",    "Lima",        "2482", "pedro.lima@cliente.com",       "Logística",    "Transportador"),
-new Colaborador("Maria",    "Julianelli",  "6449", "maria.julianelli@cliente.com", "Logística",    "Planejador"),
-new Colaborador("Kevin",    "Restom",      "2749", "kevin.restom@cliente.com",     "Logística",    "Transportador"),
-new Colaborador("Amanda",   "Amorim",      "4128", "amanda.amorim@cliente.com",    "Suprimentos",  "Operador")
+new Colaborador("Lucas",    "Fernandes",   "3748", "lucas.fernandes@cliente.com",  "Financeiro",   "Analista",      0, 0, 0, 0),
+new Colaborador("Pedro",    "Lima",        "2482", "pedro.lima@cliente.com",       "Logística",    "Transportador", 0, 0, 0, 0),
+new Colaborador("Maria",    "Julianelli",  "6449", "maria.julianelli@cliente.com", "Logística",    "Planejador",    0, 0, 0, 0),
+new Colaborador("Kevin",    "Restom",      "2749", "kevin.restom@cliente.com",     "Logística",    "Transportador", 0, 0, 0, 0),
+new Colaborador("Amanda",   "Amorim",      "4128", "amanda.amorim@cliente.com",    "Suprimentos",  "Operador",      0, 0, 0, 0)
 ];
 
 //------------------------------------------------------------------------------------------------------------------------------------//
@@ -92,6 +96,7 @@ for(let i=0; i<listaPreencher.length; ++i){
         if(listaPreencher[i].className === 'utilizavel'){
 
             marcaDesmarcaElementos(listaPreencher,i);
+            contaReacoes(i);
         }
         else if(listaPreencher[i].className === 'marcado utilizavel'){
 
@@ -103,9 +108,23 @@ for(let i=0; i<listaPreencher.length; ++i){
 //------------------------------------------------------------------------------------------------------------------------------------//
 
 let botoesReacao = document.querySelectorAll('#reacao-nome');
+let nomesReacoes = ["like", "orgulho", "excelenteTrabalho", "colaboracao"];
 
-botoesReacao[i].addEventListener("click", () => {
+function contaReacoes(index){
+
+    for(let i=0; i<botoesReacao.length; ++i){
+
+        botoesReacao[i].addEventListener("click", () => {
+
+            if(listaPreencher[index].className === 'marcado utilizavel'){
+
+            colaboradores[index][nomesReacoes[i]] += 1;
+
+            console.log(`${colaboradores[index].nome}:${nomesReacoes[i]}:${colaboradores[index][nomesReacoes[i]]}`)
+            }            
+        })
+    }
+}
 
 
-    
-})
+
