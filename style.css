@@ -149,8 +149,20 @@ form label{
 /*RANKING*/
 
 .ranking{
+	padding: 10px;
+	margin: 1% 50% 80% 10%;	
+	background-color: #bdd0fe;
+    border: solid 1px #6190ff;
+	box-shadow: 1px 2px #6190ff;
+}
 
-	margin: 0 5% 80% 80%
+.rank-colaborador{
+	background-color: #a2beff;
+	padding: 5px;
+	margin-bottom: 3px;
+	color:#001d61;
+	font-size: 20px;
+	font-weight: bold;
 }
 
 
