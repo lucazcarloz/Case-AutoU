@@ -104,7 +104,7 @@ for(let i=0; i<listaPreencher.length; ++i){
     })
 }
 //------------------------------------------------------------------------------------------------------------------------------------//
-
+//Função responsável por iniciar os contadores de reações dos feedbacks
 let botoesReacao = document.querySelectorAll('#reacao-nome');
 let nomesReacoes = ["like", "orgulho", "excelenteTrabalho", "colaboracao"];
 
@@ -127,3 +127,4 @@ for(let i=0; i<listaPreencher.length; ++i){
     contaReacoes(i);
 }
 
+//------------------------------------------------------------------------------------------------------------------------------------//
