@@ -30,8 +30,7 @@ let enviar = document.querySelector("#enviar");
 let formulario = document.querySelector('#formulario');
 let tabela = document.querySelector('#lista-colaboradores');
 let listaPreencher = document.querySelectorAll('#colaborador-membro');
-let reacoesIndividuais = document.getElementById('reacoes-usuario');
-
+let tabelaIndividual = document.getElementById('reacoes-usuario');
 enviar.addEventListener("click", function (event){
 
     let contadorErro = 0;
@@ -47,8 +46,7 @@ enviar.addEventListener("click", function (event){
             formulario.classList.add('esconder');
             sair.classList.remove('esconder');
             tabela.classList.remove('esconder');
-            listaPreencher[i].classList.add('esconder');  
-            reacoesIndividuais.classList.remove('esconder');
+            listaPreencher[i].classList.add('esconder');             
 
             preencheReacoes(i);
 
@@ -84,7 +82,6 @@ sair.addEventListener("click", function (event){
             sair.classList.add('esconder');
             tabela.classList.add('esconder');
             reacoes.classList.add('esconder');
-            reacoesIndividuais.classList.add('esconder');
 
             for(let i=0; i<colaboradores.length; ++i){
 
@@ -104,6 +101,8 @@ function marcaDesmarcaElementos(elemento,index){
     elemento[index].classList.toggle('utilizavel');
     reacoes.classList.toggle('esconder');
     reacoes.classList.toggle('reacoes');
+    tabelaIndividual.classList.toggle('tabela-reacoes');
+    tabelaIndividual.classList.toggle('esconder');
 
     for(let i=0; i<elemento.length; ++i){
 
