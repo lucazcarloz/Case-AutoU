@@ -12,10 +12,11 @@ class Colaborador{
         this.orgulho            = orgulho;
         this.excelenteTrabalho  = excelenteTrabalho;
         this.colaboracao        = colaboracao;
-    }    
+        this.pontuacao          = 0;
+    }
 }
 
-
+//CALCULANDO PONTUAÇÃO TOTAL PARA O RANKING
 const colaboradores = [
 new Colaborador("Lucas",    "Fernandes",   "3748", "lucas.fernandes@cliente.com",  "Financeiro",   "Analista",      0, 0, 0, 0),
 new Colaborador("Pedro",    "Lima",        "2482", "pedro.lima@cliente.com",       "Logística",    "Transportador", 0, 0, 0, 0),
@@ -138,10 +139,11 @@ function contaReacoes(index){
 
             if(listaPreencher[index].className === 'marcado utilizavel'){
 
-            colaboradores[index][nomesReacoes[i]] += 1;
-            
+            colaboradores[index][nomesReacoes[i]] += 1;            
             console.log(`${colaboradores[index].nome}:${nomesReacoes[i]}:${colaboradores[index][nomesReacoes[i]]}`);
-            }            
+
+            pontuacaoIndividualTotal(index);
+            }           
         })
     }
 }
@@ -151,6 +153,7 @@ for(let i=0; i<listaPreencher.length; ++i){
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------//
+//EXIBE AS REAÇÕES QUE CADA USUÁRIO RECEBEU
 let nomesReacoes2 = ["LIKE", "ORGULHO", "EXCELENTE TRABALHO", "COLABORAÇÃO"];
 
 function preencheReacoes(index){
@@ -160,3 +163,25 @@ function preencheReacoes(index){
         salvaReacao[i].innerHTML = `${nomesReacoes2[i]}: ${colaboradores[index][nomesReacoes[i]]}`
     }
 }
+//------------------------------------------------------------------------------------------------------------------------------------//
+//CONTROLANDO VISIBILIDADE DO RANKING
+let exibeRanking = document.getElementById('exibe-ranking');
+let rankingvisibilidade = document.getElementById('ranking');
+
+exibeRanking.addEventListener("click", () => {
+
+    rankingvisibilidade.classList.toggle('esconder');
+})
+
+//------------------------------------------ranking
+//Calcula a quantidade total de reações de um usuário para o ranking
+function pontuacaoIndividualTotal(index){
+
+    colaboradores[index].pontuacao = 0 + colaboradores[index].like + colaboradores[index].orgulho + colaboradores[index].excelenteTrabalho + colaboradores[index].colaboracao;
+
+    console.log(`${colaboradores[index].nome}:${colaboradores[index].pontuacao}`);
+}
+
+//------------------------------------------ranking
+
+
