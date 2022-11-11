@@ -30,6 +30,7 @@ let enviar = document.querySelector("#enviar");
 let formulario = document.querySelector('#formulario');
 let tabela = document.querySelector('#lista-colaboradores');
 let listaPreencher = document.querySelectorAll('#colaborador-membro');
+let reacoesIndividuais = document.getElementById('reacoes-usuario');
 
 enviar.addEventListener("click", function (event){
 
@@ -47,7 +48,9 @@ enviar.addEventListener("click", function (event){
             sair.classList.remove('esconder');
             tabela.classList.remove('esconder');
             listaPreencher[i].classList.add('esconder');  
-            preencheReacoes(i);          
+            reacoesIndividuais.classList.remove('esconder');
+
+            preencheReacoes(i);
 
             contadorErro++;
         }
@@ -81,6 +84,7 @@ sair.addEventListener("click", function (event){
             sair.classList.add('esconder');
             tabela.classList.add('esconder');
             reacoes.classList.add('esconder');
+            reacoesIndividuais.classList.add('esconder');
 
             for(let i=0; i<colaboradores.length; ++i){
 
