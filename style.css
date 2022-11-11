@@ -5,7 +5,7 @@ header{
 	padding: 40px 0;
     font-size: 35px;
     font-weight: bold;
-	color: antiquewhite;
+	color: #001d61;
 }
 
 .caixa{
@@ -21,7 +21,7 @@ header{
 
 button{
     padding: 5px 10px;
-    color:antiquewhite;
+    color:#001d61;
     font-weight: bold;
     font-size: 18px;
     background-color: #a2beff;
@@ -33,7 +33,7 @@ button{
 
 button:hover{
     background-color: #6190ff;
-    color: #001d61;
+    color: antiquewhite;
 }
 /*corpo da página*/
 
@@ -90,21 +90,20 @@ form label{
 
 
 /*Lista de Colaboradores*/
-
 .colaboradores{
 	display: inline-block;
 	width: 15%;
 	vertical-align: top;
 	padding: 10px;
-	margin: 10px 0 0 15%;
+	margin: 10px 0 0 10%;
 	border: solid 1px #6190ff;
 	box-shadow: 1px 2px #6190ff;
 }
-.categoria-nome{
+.categoria-titulo{
 	background-color: #6190ff;
 	padding: 5px;
 	margin-bottom: 5px;
-	color:antiquewhite;
+	color:#001d61;
 	font-size: 20px;
 	font-weight: bold;
 	text-align: center;
@@ -112,7 +111,7 @@ form label{
 
 .marcado{
 	background-color: #6190ff;
-    color: #001d61;
+    color: antiquewhite;
 }
 
 /*Lista de Reações*/
@@ -123,6 +122,25 @@ form label{
 	margin: 10px 0 0 10px;
 	border: solid 1px #6190ff;
 	box-shadow: 1px 2px #6190ff;
+}
+
+.tabela-reacoes{
+	display: inline-block;
+	border: solid 1px #6190ff;
+	box-shadow: 1px 2px #6190ff;
+	padding: 10px;
+	margin: 5px 0 0 28%;
+	
+}
+
+.reacao-nome{
+	padding: 5px 10px;
+    color:#001d61;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #a2beff;
+    border: solid #bdd0fe 1px;
+	margin-bottom: 5px;
 }
 
 /*rodapé*/
