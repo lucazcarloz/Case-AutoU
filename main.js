@@ -148,11 +148,12 @@ for(let i=0; i<listaPreencher.length; ++i){
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------//
+let nomesReacoes2 = ["LIKE", "ORGULHO", "EXCELENTE TRABALHO", "COLABORAÇÃO"];
 
 function preencheReacoes(index){
 
     for(let i=0; i<botoesReacao.length; ++i){
 
-        salvaReacao[i].innerHTML = `${nomesReacoes[i].toUpperCase()}: ${colaboradores[index][nomesReacoes[i]]}`
+        salvaReacao[i].innerHTML = `${nomesReacoes2[i]}: ${colaboradores[index][nomesReacoes[i]]}`
     }
 }
