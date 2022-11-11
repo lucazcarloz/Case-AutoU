@@ -98,7 +98,7 @@ form label{
 	width: 15%;
 	vertical-align: top;
 	padding: 10px;
-	margin: 10px 0 0 10%;
+	margin: 10px 0 10px 10%;
 	border: solid 1px #6190ff;
 	box-shadow: 1px 2px #6190ff;
 }
@@ -150,7 +150,7 @@ form label{
 
 .ranking{
 	padding: 10px;
-	margin: 1% 50% 80% 10%;	
+	margin: 0 50% 1% 10%;	
 	background-color: #bdd0fe;
     border: solid 1px #6190ff;
 	box-shadow: 1px 2px #6190ff;
