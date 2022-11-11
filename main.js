@@ -95,8 +95,7 @@ for(let i=0; i<listaPreencher.length; ++i){
         
         if(listaPreencher[i].className === 'utilizavel'){
 
-            marcaDesmarcaElementos(listaPreencher,i);
-            contaReacoes(i);
+            marcaDesmarcaElementos(listaPreencher,i);      
         }
         else if(listaPreencher[i].className === 'marcado utilizavel'){
 
@@ -104,14 +103,12 @@ for(let i=0; i<listaPreencher.length; ++i){
         }
     })
 }
-
 //------------------------------------------------------------------------------------------------------------------------------------//
 
 let botoesReacao = document.querySelectorAll('#reacao-nome');
 let nomesReacoes = ["like", "orgulho", "excelenteTrabalho", "colaboracao"];
 
 function contaReacoes(index){
-
     for(let i=0; i<botoesReacao.length; ++i){
 
         botoesReacao[i].addEventListener("click", () => {
@@ -126,5 +123,7 @@ function contaReacoes(index){
     }
 }
 
-
+for(let i=0; i<listaPreencher.length; ++i){
+    contaReacoes(i);
+}
 
