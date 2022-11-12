@@ -12,6 +12,7 @@ class Colaborador{
         this.orgulho            = orgulho;
         this.excelenteTrabalho  = excelenteTrabalho;
         this.colaboracao        = colaboracao;
+        this.feedbacks          = "";
     }
 }
 
@@ -38,6 +39,7 @@ let formulario = document.querySelector('#formulario');
 let tabela = document.querySelector('#lista-colaboradores');
 let listaPreencher = document.querySelectorAll('#colaborador-membro');
 let tabelaIndividual = document.getElementById('reacoes-usuario');
+
 enviar.addEventListener("click", function (event){
 
     let contadorErro = 0;
@@ -53,7 +55,12 @@ enviar.addEventListener("click", function (event){
             formulario.classList.add('esconder');
             sair.classList.remove('esconder');
             tabela.classList.remove('esconder');
-            listaPreencher[i].classList.add('esconder');             
+            listaPreencher[i].classList.add('esconder');
+            formularioFeedback.classList.remove('esconder');
+            formularioFeedback.classList.add('feedback');
+            caixaFeedback.classList.remove('esconder');
+            caixaFeedback.classList.add('display-feeback');
+            feedbackRecebido.innerHTML = `${colaboradores[i].feedbacks} | `;                   
 
             preencheReacoes(i);
 
@@ -73,11 +80,8 @@ enviar.addEventListener("click", function (event){
 let reacoes = document.querySelector('#reacoes');
 let sair = document.querySelector('#botaoSair');
 
-sair.addEventListener("click", function (event){
+sair.addEventListener("click", function (){
 
-    event.preventDefault();
-
-    rankingVisibilidade.classList.toggle('esconder');
     for(let i=0; i<colaboradores.length; ++i){
         
         if(listaPreencher[i].className === 'marcado utilizavel'){
@@ -90,6 +94,11 @@ sair.addEventListener("click", function (event){
             sair.classList.add('esconder');
             tabela.classList.add('esconder');
             reacoes.classList.add('esconder');
+            rankingVisibilidade.classList.add('esconder');
+            formularioFeedback.classList.add('esconder');
+            formularioFeedback.classList.remove('feedback'); 
+            caixaFeedback.classList.add('esconder');
+            caixaFeedback.classList.remove('display-feeback');
 
             for(let i=0; i<colaboradores.length; ++i){
 
@@ -140,6 +149,7 @@ let nomesReacoes = ["like", "orgulho", "excelenteTrabalho", "colaboracao"];
 let salvaReacao = document.querySelectorAll("#reacao-qtd");
 /////////////////////////////////////////////////////////
 function contaReacoes(index){
+
     for(let i=0; i<botoesReacao.length; ++i){
 
         botoesReacao[i].addEventListener("click", () => {
@@ -154,12 +164,14 @@ function contaReacoes(index){
                     if(colaboradoresR[j].nome === `${colaboradores[index].nome} ${colaboradores[index].sobrenome}`){
                 
                         colaboradoresR[j][nomesReacoes[i]] += 1;
-                        console.log(`${colaboradoresR[j].nome}:${nomesReacoes[i]}:${colaboradoresR[j][nomesReacoes[i]]}`);    
+                        console.log(`${colaboradoresR[j].nome}:${nomesReacoes[i]}:${colaboradoresR[j][nomesReacoes[i]]}`); 
+
+                        armazenaFeedback(index); 
                     }
                 } 
 
-                pontuacaoIndividualTotal(index);           
-            }           
+                pontuacaoIndividualTotal(index);     
+            }         
         })
     }
 }
@@ -234,4 +246,28 @@ function organizaMenorMaior(lista){
     }
 }
 
+//------------------------------------------------------------------------------------------------------------------------------------//
+//FORMULÁRIO DO FEEDBACK
+let formularioFeedback = document.getElementById('feedback');
+let enviarFeedback = document.getElementById('enviar-feedback');
+let feedback;
+let feedbackRecebido = document.querySelector('.texto-recebido');
+let caixaFeedback = document.getElementById('feedback-recebido');
 
+enviarFeedback.addEventListener("click", (event) =>{
+
+    event.preventDefault();
+
+    feedback = document.getElementById('feedback-texto').value;
+})
+//Função que armazenda o feedback no respectivo colaborador e exibe quem enviou o feedback: chamada na linha 162.
+function armazenaFeedback(index){
+
+    for(let i = 0; i<colaboradores.length; ++i){
+
+        if(resposta === colaboradores[i].email || resposta === colaboradores[i].matricula){
+            
+            colaboradores[index].feedbacks += `${colaboradores[i].nome} ${colaboradores[i].sobrenome}: ${feedback}; `;
+        }
+    }
+}

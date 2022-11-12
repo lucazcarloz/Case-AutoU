@@ -25,7 +25,7 @@ button{
     padding: 5px 30%;
     color:#001d61;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 15px;
     background-color: #a2beff;
     cursor: pointer;
     border: solid #bdd0fe 1px;
@@ -108,7 +108,7 @@ form label{
 	padding: 5px;
 	margin-bottom: 5px;
 	color:#001d61;
-	font-size: 20px;
+	font-size: 15px;
 	font-weight: bold;
 	text-align: center;
 }
@@ -141,7 +141,7 @@ form label{
 	padding: 5px 10px;
     color:#001d61;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 15px;
     background-color: #a2beff;
     border: solid #bdd0fe 1px;
 	margin-bottom: 5px;
@@ -169,6 +169,71 @@ form label{
 	color:#001d61;
 	font-size: 15px;
 	font-weight: bold;
+}
+
+/*FEEDBACK EM TEXTO*/
+
+.feedback{
+	font-size: 20px;
+	display: inline-block;
+	width: 40%;
+	background-color: #bdd0fe;
+    border: solid 1px #6190ff;
+	box-shadow: 1px 2px #6190ff;
+	padding: 1%;
+	margin: 0 0 1% 10%;
+}
+
+#feedback-texto{
+	margin: 1% 2% 1% 0;
+	width: 90%;
+	padding: 10px 5%;
+}
+
+#enviar-feedback{
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #a2beff;
+    cursor: pointer;
+    border: solid #bdd0fe 1px;
+	transition: 0.5s;
+	color:#001d61;
+	padding: 1%;
+	width: 20%;
+}
+
+#enviar-feedback:hover{
+	background-color: #6190ff;
+    color: antiquewhite;
+}
+
+/*feedback recebido*/
+
+#feedback-recebido{
+	padding: 0.5%;
+	margin: 0 0% 1% 10%;
+	background-color: #bdd0fe;
+    border: solid 1px #6190ff;
+	box-shadow: 1px 2px #6190ff;
+	vertical-align: top;
+	height: 120px;
+	width: 41%;
+}
+
+.display-feedback{
+	display: inline-block;
+}
+
+.texto-recebido{
+	text-transform: uppercase;
+	background-color: #a2beff;
+	margin-bottom: 3px;
+	color:#001d61;
+	font-size: 15px;
+	font-weight: bold;
+	width: 505px;
+	height: 85px;
+	word-break: break-word;
 }
 
 

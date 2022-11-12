@@ -76,10 +76,22 @@
                         <p class="rank-colaborador">QUINTO</p>
                     </div>
                 </section>
+                
+                <form id="feedback" class="esconder">
+                    <label for="feedback-texto">Deseja enviar um feedback personalizado?</label>
+                    <input type="text" id="feedback-texto" class="input-padrao" placeholder="Digite aqui o que você pensa.">
+                    <input type="submit" id="enviar-feedback" value="Enviar" class="enviar-feedback">
+                </form>
+
+                <div id="feedback-recebido" class="esconder">
+                    <p class="categoria-titulo categoria-feed">Feedbacks recebidos</p>
+                    <div class="caixa-de-feedbacks">
+                        <p class="texto-recebido">placeholder</p>
+                    </div>
+                </div>
         </main>
 
         <footer>
-
             <p class="copyright">&copy; Copyright Fictício - 20XX</p>
         </footer>
         <script src="main.js"defer></script>
