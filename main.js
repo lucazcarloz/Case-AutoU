@@ -146,10 +146,8 @@ function contaReacoes(index){
 
             if(listaPreencher[index].className === 'marcado utilizavel'){
 
-            colaboradores[index][nomesReacoes[i]] += 1;           
-            //console.log(`${colaboradores[index].nome}:${nomesReacoes[i]}:${colaboradores[index][nomesReacoes[i]]}`);
-
-            pontuacaoIndividualTotal(index);
+                colaboradores[index][nomesReacoes[i]] += 1;           
+                //console.log(`${colaboradores[index].nome}:${nomesReacoes[i]}:${colaboradores[index][nomesReacoes[i]]}`);
 
                 for(let j = 0; j < colaboradoresR.length; ++j){
 
@@ -158,7 +156,9 @@ function contaReacoes(index){
                         colaboradoresR[j][nomesReacoes[i]] += 1;
                         console.log(`${colaboradoresR[j].nome}:${nomesReacoes[i]}:${colaboradoresR[j][nomesReacoes[i]]}`);    
                     }
-                }            
+                } 
+
+                pontuacaoIndividualTotal(index);           
             }           
         })
     }
@@ -206,7 +206,7 @@ function pontuacaoIndividualTotal(index){
     
     for(let maior = 0; maior < colaboradores.length; ++maior){
 
-        posicoes[maior].innerHTML = `${colaboradoresR[maior].nome}: ${colaboradoresR[maior].pontuacao} reações ao todo.`
+        posicoes[maior].innerHTML = `${colaboradoresR[maior].nome}: ${colaboradoresR[maior].pontuacao} reações ao todo. | Likes: ${colaboradoresR[maior].like} | Orgulho: ${colaboradoresR[maior].orgulho} | Excelente Trabalho: ${colaboradoresR[maior].excelenteTrabalho} | Colaboração: ${colaboradoresR[maior].colaboracao}`
     }
 
     //console.log(`${colaboradores[index].nome}:${colaboradores[index].pontuacao}`);
