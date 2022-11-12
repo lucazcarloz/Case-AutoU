@@ -11,5 +11,5 @@
 
 
 ```
-Link para utilizar o teste do projeto em breve:
+Link para utilizar o projeto: case-auto-o9txdzibz-lucazcarloz.vercel.app
 ```
