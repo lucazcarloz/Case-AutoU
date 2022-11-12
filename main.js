@@ -24,11 +24,11 @@ const colaboradores = [
 ];
 
 const colaboradoresR = [
-    {nome: "Lucas Fernandes",     pontuacao: 0},
-    {nome: "Pedro Lima",          pontuacao: 0},
-    {nome: "Maria Julianelli",    pontuacao: 0},
-    {nome: "Kevin Restom",        pontuacao: 0},
-    {nome: "Amanda Amorim",       pontuacao: 0}
+    {nome: "Lucas Fernandes",     pontuacao: 0, like: 0, orgulho: 0, excelenteTrabalho: 0, colaboracao: 0},
+    {nome: "Pedro Lima",          pontuacao: 0, like: 0, orgulho: 0, excelenteTrabalho: 0, colaboracao: 0},
+    {nome: "Maria Julianelli",    pontuacao: 0, like: 0, orgulho: 0, excelenteTrabalho: 0, colaboracao: 0},
+    {nome: "Kevin Restom",        pontuacao: 0, like: 0, orgulho: 0, excelenteTrabalho: 0, colaboracao: 0},
+    {nome: "Amanda Amorim",       pontuacao: 0, like: 0, orgulho: 0, excelenteTrabalho: 0, colaboracao: 0}
 ];
 
 //------------------------------------------------------------------------------------------------------------------------------------//
@@ -138,7 +138,7 @@ for(let i=0; i<listaPreencher.length; ++i){
 let botoesReacao = document.querySelectorAll('#reacao-nome');
 let nomesReacoes = ["like", "orgulho", "excelenteTrabalho", "colaboracao"];
 let salvaReacao = document.querySelectorAll("#reacao-qtd");
-
+/////////////////////////////////////////////////////////
 function contaReacoes(index){
     for(let i=0; i<botoesReacao.length; ++i){
 
@@ -146,10 +146,19 @@ function contaReacoes(index){
 
             if(listaPreencher[index].className === 'marcado utilizavel'){
 
-            colaboradores[index][nomesReacoes[i]] += 1;            
-            console.log(`${colaboradores[index].nome}:${nomesReacoes[i]}:${colaboradores[index][nomesReacoes[i]]}`);
+            colaboradores[index][nomesReacoes[i]] += 1;           
+            //console.log(`${colaboradores[index].nome}:${nomesReacoes[i]}:${colaboradores[index][nomesReacoes[i]]}`);
 
             pontuacaoIndividualTotal(index);
+
+                for(let j = 0; j < colaboradoresR.length; ++j){
+
+                    if(colaboradoresR[j].nome === `${colaboradores[index].nome} ${colaboradores[index].sobrenome}`){
+                
+                        colaboradoresR[j][nomesReacoes[i]] += 1;
+                        console.log(`${colaboradoresR[j].nome}:${nomesReacoes[i]}:${colaboradoresR[j][nomesReacoes[i]]}`);    
+                    }
+                }            
             }           
         })
     }
@@ -194,7 +203,7 @@ function pontuacaoIndividualTotal(index){
         }
     }
     organizaMenorMaior(colaboradoresR)
-
+    
     for(let maior = 0; maior < colaboradores.length; ++maior){
 
         posicoes[maior].innerHTML = `${colaboradoresR[maior].nome}: ${colaboradoresR[maior].pontuacao} reações ao todo.`
