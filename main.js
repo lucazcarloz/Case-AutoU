@@ -76,7 +76,7 @@ let sair = document.querySelector('#botaoSair');
 sair.addEventListener("click", function (event){
 
     event.preventDefault();
-    
+
     rankingVisibilidade.classList.toggle('esconder');
     for(let i=0; i<colaboradores.length; ++i){
         
@@ -197,7 +197,7 @@ function pontuacaoIndividualTotal(index){
 
     for(let maior = 0; maior < colaboradores.length; ++maior){
 
-        posicoes[maior].innerHTML = `${colaboradoresR[maior].nome}: ${colaboradoresR[maior].pontuacao} reações`
+        posicoes[maior].innerHTML = `${colaboradoresR[maior].nome}: ${colaboradoresR[maior].pontuacao} reações ao todo.`
     }
 
     //console.log(`${colaboradores[index].nome}:${colaboradores[index].pontuacao}`);
