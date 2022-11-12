@@ -76,7 +76,8 @@ let sair = document.querySelector('#botaoSair');
 sair.addEventListener("click", function (event){
 
     event.preventDefault();
-
+    
+    rankingVisibilidade.classList.toggle('esconder');
     for(let i=0; i<colaboradores.length; ++i){
         
         if(listaPreencher[i].className === 'marcado utilizavel'){
@@ -172,11 +173,11 @@ function preencheReacoes(index){
 //------------------------------------------------------------------------------------------------------------------------------------//
 //CONTROLANDO VISIBILIDADE DO RANKING
 let exibeRanking = document.getElementById('exibe-ranking');
-let rankingvisibilidade = document.getElementById('ranking');
+let rankingVisibilidade = document.getElementById('ranking');
 
 exibeRanking.addEventListener("click", () => {
 
-    rankingvisibilidade.classList.toggle('esconder');
+    rankingVisibilidade.classList.toggle('esconder');
 })
 
 //------------------------------------------ranking
