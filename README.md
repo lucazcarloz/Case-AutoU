@@ -1,9 +1,13 @@
 # Case-AutoU
 #Projeto de Case Prático para vaga na Auto U
 
-![Badge em Desenvolvimento](https://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=yellow&style=flat-square)
+![Badge Conclúido](https://img.shields.io/static/v1?label=STATUS&message=CONCLUÍDO&color=green&style=flat-square)
 
-![image](https://user-images.githubusercontent.com/113362701/201206496-99b38ff1-8f7a-48e6-9607-04b96ab7cd8f.png)
+![home](https://user-images.githubusercontent.com/113362701/201491348-e02d1bdd-9e3d-4a10-a13e-c031d365f8d9.png)
+*Página inicial do aplicativo.*
+
+![image](https://user-images.githubusercontent.com/113362701/201491410-68d33e51-2aa8-4538-bbb5-d0b4334b28af.png)
+*Página do usuário logado.*
 
 
 ```
