@@ -171,6 +171,10 @@ form label{
 	font-weight: bold;
 }
 
+#exibe-ranking{
+	width: 199px;
+}
+
 /*FEEDBACK EM TEXTO*/
 
 .feedback{
@@ -231,7 +235,7 @@ form label{
 	color:#001d61;
 	font-size: 15px;
 	font-weight: bold;
-	width: 505px;
+	width: 554px;
 	height: 85px;
 	word-break: break-word;
 }
