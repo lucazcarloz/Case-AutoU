@@ -12,17 +12,23 @@ class Colaborador{
         this.orgulho            = orgulho;
         this.excelenteTrabalho  = excelenteTrabalho;
         this.colaboracao        = colaboracao;
-        this.pontuacao          = 0;
     }
 }
 
-//CALCULANDO PONTUAÇÃO TOTAL PARA O RANKING
 const colaboradores = [
-new Colaborador("Lucas",    "Fernandes",   "3748", "lucas.fernandes@cliente.com",  "Financeiro",   "Analista",      0, 0, 0, 0),
-new Colaborador("Pedro",    "Lima",        "2482", "pedro.lima@cliente.com",       "Logística",    "Transportador", 0, 0, 0, 0),
-new Colaborador("Maria",    "Julianelli",  "6449", "maria.julianelli@cliente.com", "Logística",    "Planejador",    0, 0, 0, 0),
-new Colaborador("Kevin",    "Restom",      "2749", "kevin.restom@cliente.com",     "Logística",    "Transportador", 0, 0, 0, 0),
-new Colaborador("Amanda",   "Amorim",      "4128", "amanda.amorim@cliente.com",    "Suprimentos",  "Operador",      0, 0, 0, 0)
+    new Colaborador("Lucas",    "Fernandes",   "3748", "lucas.fernandes@cliente.com",  "Financeiro",   "Analista",      0, 0, 0, 0),
+    new Colaborador("Pedro",    "Lima",        "2482", "pedro.lima@cliente.com",       "Logística",    "Transportador", 0, 0, 0, 0),
+    new Colaborador("Maria",    "Julianelli",  "6449", "maria.julianelli@cliente.com", "Logística",    "Planejador",    0, 0, 0, 0),
+    new Colaborador("Kevin",    "Restom",      "2749", "kevin.restom@cliente.com",     "Logística",    "Transportador", 0, 0, 0, 0),
+    new Colaborador("Amanda",   "Amorim",      "4128", "amanda.amorim@cliente.com",    "Suprimentos",  "Operador",      0, 0, 0, 0)
+];
+
+const colaboradoresR = [
+    {nome: "Lucas Fernandes",     pontuacao: 0},
+    {nome: "Pedro Lima",          pontuacao: 0},
+    {nome: "Maria Julianelli",    pontuacao: 0},
+    {nome: "Kevin Restom",        pontuacao: 0},
+    {nome: "Amanda Amorim",       pontuacao: 0}
 ];
 
 //------------------------------------------------------------------------------------------------------------------------------------//
@@ -179,9 +185,42 @@ function pontuacaoIndividualTotal(index){
 
     colaboradores[index].pontuacao = 0 + colaboradores[index].like + colaboradores[index].orgulho + colaboradores[index].excelenteTrabalho + colaboradores[index].colaboracao;
 
-    console.log(`${colaboradores[index].nome}:${colaboradores[index].pontuacao}`);
-}
+    for(let i = 0; i<colaboradores.length; ++i){
 
+        if(colaboradoresR[i].nome === `${colaboradores[index].nome} ${colaboradores[index].sobrenome}`){
+    
+            colaboradoresR[i].pontuacao = colaboradores[index].pontuacao;
+        }
+    }
+    organizaMenorMaior(colaboradoresR)
+
+    for(let maior = 0; maior < colaboradores.length; ++maior){
+
+        posicoes[maior].innerHTML = `${colaboradoresR[maior].nome}: ${colaboradoresR[maior].pontuacao} reações`
+    }
+
+    //console.log(`${colaboradores[index].nome}:${colaboradores[index].pontuacao}`);
+}
 //------------------------------------------ranking
+let posicoes = document.querySelectorAll('.rank-colaborador');
+
+function organizaMenorMaior(lista){
+
+    for(let atual = 0; atual < lista.length; ++atual){
+
+        let analise = atual;
+
+        while(analise > 0 && lista[analise].pontuacao > lista[analise - 1].pontuacao){
+
+            let itemAnalise = lista[analise];
+            let itemAnterior = lista[analise - 1];
+
+            lista[analise] = itemAnterior
+            lista[analise - 1] = itemAnalise;
+            
+            --analise;
+        }
+    }
+}
 
 
