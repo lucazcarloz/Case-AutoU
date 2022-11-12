@@ -202,8 +202,9 @@ function pontuacaoIndividualTotal(index){
     //console.log(`${colaboradores[index].nome}:${colaboradores[index].pontuacao}`);
 }
 //------------------------------------------ranking
-let posicoes = document.querySelectorAll('.rank-colaborador');
 
+//Organiza a posição dos colaboradores na tabela de rank do HTML por meio do método InsertionSort
+let posicoes = document.querySelectorAll('.rank-colaborador');
 function organizaMenorMaior(lista){
 
     for(let atual = 0; atual < lista.length; ++atual){
