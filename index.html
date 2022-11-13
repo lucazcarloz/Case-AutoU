@@ -28,7 +28,14 @@
                 <input type="text" id="email-matricula" class="input-padrao" required placeholder="XXXX / cliente@email.com" name="acesso">
                 <input type="submit" id="enviar" value="Enviar" class="enviar">
             </form>
-
+            <div id="caixa-usuarios" class="esconder">
+                <div class="usuario-logado">
+                    <p id="usuario-logado" class="categoria-titulo">Nome Usuário</p>
+                </div>
+                <div class="fotos-colaboradores">
+                    <img id="imagem" src="imagens/placeholder.png">
+                </div>
+            </div>
             <section id="lista-colaboradores" class="esconder">
                 <div class="colaboradores">
                     <div class="colaboradores-categoria">
@@ -43,7 +50,6 @@
                         <button id="exibe-ranking">Ranking</button>
                     </div>
                 </div>
-
                 <div id="reacoes" class="esconder">
                     <div class="reacoes-categoria">
                         <p class="categoria-titulo">Reações disponíveis:</p>
@@ -55,7 +61,6 @@
                         <button id="reacao-nome">COLABORAÇÃO</button>
                     </div>
                 </div>
-
                 <div id="reacoes-usuario" class="tabela-reacoes">
                     <p class="categoria-titulo">Reações recebidas:</p>                
                     <div class="tabela2">

@@ -1,6 +1,6 @@
 class Colaborador{
 
-    constructor(nome, sobrenome, matricula, email, departamento, cargo, like, orgulho, excelenteTrabalho, colaboracao){
+    constructor(nome, sobrenome, matricula, email, departamento, cargo, like, orgulho, excelenteTrabalho, colaboracao, imagem){
 
         this.nome               = nome;
         this.sobrenome          = sobrenome;
@@ -13,15 +13,16 @@ class Colaborador{
         this.excelenteTrabalho  = excelenteTrabalho;
         this.colaboracao        = colaboracao;
         this.feedbacks          = "";
+        this.imagem             = imagem;
     }
 }
 
 const colaboradores = [
-    new Colaborador("Lucas",    "Fernandes",   "3748", "lucas.fernandes@cliente.com",  "Financeiro",   "Analista",      0, 0, 0, 0),
-    new Colaborador("Pedro",    "Lima",        "2482", "pedro.lima@cliente.com",       "Logística",    "Transportador", 0, 0, 0, 0),
-    new Colaborador("Maria",    "Julianelli",  "6449", "maria.julianelli@cliente.com", "Logística",    "Planejador",    0, 0, 0, 0),
-    new Colaborador("Kevin",    "Restom",      "2749", "kevin.restom@cliente.com",     "Logística",    "Transportador", 0, 0, 0, 0),
-    new Colaborador("Amanda",   "Amorim",      "4128", "amanda.amorim@cliente.com",    "Suprimentos",  "Operador",      0, 0, 0, 0)
+    new Colaborador("Lucas",    "Fernandes",   "3748", "lucas.fernandes@cliente.com",  "Financeiro",   "Analista",      0, 0, 0, 0, "imagens/LucasFernandes.png"),
+    new Colaborador("Pedro",    "Lima",        "2482", "pedro.lima@cliente.com",       "Logística",    "Transportador", 0, 0, 0, 0, "imagens/PedroLima.png"),
+    new Colaborador("Maria",    "Julianelli",  "6449", "maria.julianelli@cliente.com", "Logística",    "Planejador",    0, 0, 0, 0, "imagens/MariaJulianelli.png"),
+    new Colaborador("Kevin",    "Restom",      "2749", "kevin.restom@cliente.com",     "Logística",    "Transportador", 0, 0, 0, 0, "imagens/KevinRestom.png"),
+    new Colaborador("Amanda",   "Amorim",      "4128", "amanda.amorim@cliente.com",    "Suprimentos",  "Operador",      0, 0, 0, 0, "imagens/AmandaAmorim.png")
 ];
 
 const colaboradoresR = [
@@ -56,11 +57,12 @@ enviar.addEventListener("click", function (event){
             sair.classList.remove('esconder');
             tabela.classList.remove('esconder');
             listaPreencher[i].classList.add('esconder');
-            formularioFeedback.classList.remove('esconder');
             formularioFeedback.classList.add('feedback');
-            caixaFeedback.classList.remove('esconder');
             caixaFeedback.classList.add('display-feeback');
-            feedbackRecebido.innerHTML = `${colaboradores[i].feedbacks} | `;                   
+            feedbackRecebido.innerHTML = `${colaboradores[i].feedbacks} | `;
+            nomeLogado.innerHTML = `${colaboradores[i].nome} ${colaboradores[i].sobrenome}`;    
+            imagens.src = colaboradores[i].imagem;
+            caixaUsuarios.classList.add('usuarios');        
 
             preencheReacoes(i);
 
@@ -95,10 +97,9 @@ sair.addEventListener("click", function (){
             tabela.classList.add('esconder');
             reacoes.classList.add('esconder');
             rankingVisibilidade.classList.add('esconder');
-            formularioFeedback.classList.add('esconder');
             formularioFeedback.classList.remove('feedback'); 
-            caixaFeedback.classList.add('esconder');
             caixaFeedback.classList.remove('display-feeback');
+            caixaUsuarios.classList.remove('usuarios');
 
             for(let i=0; i<colaboradores.length; ++i){
 
@@ -271,3 +272,10 @@ function armazenaFeedback(index){
         }
     }
 }
+
+//------------------------------------------------------------------------------------------------------------------------------------//
+let caixaUsuarios = document.getElementById('caixa-usuarios');
+//Usuário Logado
+let nomeLogado = document.getElementById('usuario-logado');//LINHA 63
+//Foto do Usuário
+let imagens = document.getElementById('imagem');//LINHA 64
