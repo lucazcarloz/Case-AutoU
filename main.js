@@ -59,6 +59,7 @@ enviar.addEventListener("click", function (event){
             listaPreencher[i].classList.add('esconder');
             formularioFeedback.classList.add('feedback');
             caixaFeedback.classList.add('display-feeback');
+            caixaFeedback.classList.remove('esconder');
             feedbackRecebido.innerHTML = `${colaboradores[i].feedbacks} | `;
             nomeLogado.innerHTML = `${colaboradores[i].nome} ${colaboradores[i].sobrenome}`;    
             imagens.src = colaboradores[i].imagem;
@@ -96,6 +97,7 @@ sair.addEventListener("click", function (){
             sair.classList.add('esconder');
             tabela.classList.add('esconder');
             reacoes.classList.add('esconder');
+            caixaFeedback.classList.add('esconder');
             rankingVisibilidade.classList.add('esconder');
             formularioFeedback.classList.remove('feedback'); 
             caixaFeedback.classList.remove('display-feeback');
